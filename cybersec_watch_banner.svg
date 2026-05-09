@@ -1,0 +1,202 @@
+<svg width="100%" viewBox="0 0 690 350" role="img" xmlns="http://www.w3.org/2000/svg" style="">
+<title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">CyberSec Watch — Bannière de présentation</title>
+<desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Bannière de présentation du projet CyberSec Watch, plateforme de veille mondiale en cybersécurité temps réel</desc>
+
+<defs>
+  <!-- Subtle grid pattern -->
+  <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+    <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#bfdbfe" stroke-width="0.4"/>
+  </pattern>
+  <!-- Dot pattern -->
+  <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1" fill="#93c5fd" opacity="0.5"/>
+  </pattern>
+  <!-- Attack arc gradient - blue -->
+  <linearGradient id="arcB" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#2563eb" stop-opacity="0"/>
+    <stop offset="50%" stop-color="#2563eb" stop-opacity="0.9"/>
+    <stop offset="100%" stop-color="#2563eb" stop-opacity="0"/>
+  </linearGradient>
+  <!-- Attack arc gradient - red -->
+  <linearGradient id="arcR" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#ef4444" stop-opacity="0"/>
+    <stop offset="50%" stop-color="#ef4444" stop-opacity="0.8"/>
+    <stop offset="100%" stop-color="#ef4444" stop-opacity="0"/>
+  </linearGradient>
+  <!-- Attack arc gradient - orange -->
+  <linearGradient id="arcO" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#f97316" stop-opacity="0"/>
+    <stop offset="60%" stop-color="#f97316" stop-opacity="0.7"/>
+    <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+
+
+
+<!-- ── BACKGROUND ── -->
+<rect width="680" height="340" style="fill:rgb(240, 246, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Subtle dot texture right side -->
+<rect x="340" y="0" width="340" height="340" opacity="0.6" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.6;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Grid overlay on map area -->
+<rect x="200" y="40" width="460" height="260" opacity="0.7" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.7;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Thin top accent line -->
+<rect x="0" y="0" width="680" height="2" fill="#2563eb" style="fill:rgb(37, 99, 235);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- ── WORLD MAP (simplified continents) ── -->
+<g opacity="0.95" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.95;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+  <!-- North America -->
+  <path d="M230,78 L255,72 L280,70 L298,78 L310,92 L315,110 L310,130 L300,150 L285,165 L268,170 L252,166 L238,154 L228,138 L222,118 L224,98 Z" style="fill:rgb(220, 232, 255);stroke:rgb(184, 208, 245);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Greenland -->
+  <path d="M294,55 L316,52 L325,62 L320,74 L305,77 L292,68 Z" style="fill:rgb(220, 232, 255);stroke:rgb(184, 208, 245);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- South America -->
+  <path d="M278,170 L305,165 L322,178 L330,200 L328,230 L318,256 L300,268 L282,264 L268,248 L262,224 L264,198 Z" style="fill:rgb(220, 232, 255);stroke:rgb(184, 208, 245);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Europe -->
+  <path d="M376,72 L412,68 L428,78 L430,95 L420,108 L400,112 L382,106 L370,92 Z" style="fill:rgb(220, 232, 255);stroke:rgb(184, 208, 245);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Scandinavia -->
+  <path d="M385,52 L402,50 L410,62 L406,74 L394,76 L382,68 Z" style="fill:rgb(220, 232, 255);stroke:rgb(184, 208, 245);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- UK -->
+  <path d="M362,70 L372,68 L374,82 L366,86 L358,78 Z" style="fill:rgb(220, 232, 255);stroke:rgb(184, 208, 245);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Africa -->
+  <path d="M370,120 L428,116 L444,134 L446,168 L440,208 L426,238 L406,252 L385,250 L368,232 L356,200 L358,164 L362,140 Z" style="fill:rgb(220, 232, 255);stroke:rgb(184, 208, 245);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Asia main -->
+  <path d="M428,62 L520,58 L570,62 L600,74 L614,96 L610,122 L596,140 L568,152 L530,156 L494,150 L462,136 L436,114 L428,90 Z" style="fill:rgb(220, 232, 255);stroke:rgb(184, 208, 245);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- India -->
+  <path d="M494,138 L522,134 L536,148 L538,172 L528,196 L512,208 L496,204 L484,186 L482,164 Z" style="fill:rgb(220, 232, 255);stroke:rgb(184, 208, 245);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- SE Asia -->
+  <path d="M550,148 L582,144 L598,158 L598,176 L582,180 L560,174 Z" style="fill:rgb(220, 232, 255);stroke:rgb(184, 208, 245);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Japan -->
+  <path d="M600,92 L614,86 L622,98 L616,110 L602,108 Z" style="fill:rgb(220, 232, 255);stroke:rgb(184, 208, 245);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Australia -->
+  <path d="M564,208 L622,202 L646,218 L648,246 L634,264 L606,270 L580,266 L560,248 L554,226 Z" style="fill:rgb(220, 232, 255);stroke:rgb(184, 208, 245);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Russia North -->
+  <path d="M428,52 L560,46 L614,50 L614,74 L600,74 L520,58 L428,62 Z" style="fill:rgb(220, 232, 255);stroke:rgb(184, 208, 245);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Middle East -->
+  <path d="M428,116 L468,110 L482,124 L484,138 L462,136 Z" style="fill:rgb(220, 232, 255);stroke:rgb(184, 208, 245);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</g>
+
+<!-- ── HEAT SPOTS (origin countries) ── -->
+<!-- China -->
+<circle cx="568" cy="108" r="22" opacity="0.6" style="fill:rgba(239, 68, 68, 0.18);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.6;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="568" cy="108" r="14" opacity="0.8" style="fill:rgba(239, 68, 68, 0.18);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.8;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Russia -->
+<circle cx="510" cy="68" r="18" opacity="0.5" style="fill:rgba(239, 68, 68, 0.15);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Iran -->
+<circle cx="470" cy="128" r="12" opacity="0.6" style="fill:rgba(239, 68, 68, 0.12);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.6;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- USA -->
+<circle cx="262" cy="120" r="16" opacity="0.5" style="fill:rgba(249, 115, 22, 0.14);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- NK -->
+<circle cx="608" cy="100" r="10" opacity="0.5" style="fill:rgba(239, 68, 68, 0.18);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- ── ATTACK ARCS ── -->
+<!-- China → Europe -->
+<path d="M568,108 Q490,30 400,90" stroke="#ef4444" style="fill:none;stroke:rgb(239, 68, 68);color:rgb(255, 255, 255);stroke-width:1.2px;stroke-dasharray:5px, 3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.75;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Russia → USA -->
+<path d="M510,68 Q390,20 265,118" stroke="#ef4444" style="fill:none;stroke:rgb(239, 68, 68);color:rgb(255, 255, 255);stroke-width:1.2px;stroke-dasharray:5px, 3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.75;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- China → USA -->
+<path d="M568,108 Q440,40 265,118" stroke="#f97316" style="fill:none;stroke:rgb(249, 115, 22);color:rgb(255, 255, 255);stroke-width:1.2px;stroke-dasharray:5px, 3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.75;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Iran → Europe -->
+<path d="M470,128 Q430,70 390,90" stroke="#2563eb" style="fill:none;stroke:rgb(37, 99, 235);color:rgb(255, 255, 255);stroke-width:1.2px;stroke-dasharray:5px, 3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.75;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- NK → Australia -->
+<path d="M610,100 Q620,170 608,220" stroke="#ef4444" style="fill:none;stroke:rgb(239, 68, 68);color:rgb(255, 255, 255);stroke-width:1.2px;stroke-dasharray:5px, 3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.75;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- China → India (internal) -->
+<path d="M568,108 Q540,130 510,148" stroke="#f97316" style="fill:none;stroke:rgb(249, 115, 22);color:rgb(255, 255, 255);stroke-width:1.2px;stroke-dasharray:5px, 3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.75;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- ── ATTACK DOTS (targets) ── -->
+<!-- Europe target -->
+<circle cx="400" cy="90" r="3.5" fill="#ef4444" style="fill:rgb(239, 68, 68);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.894521;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="400" cy="90" r="0" style="fill:none;stroke:rgb(239, 68, 68);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.00152686;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- USA target -->
+<circle cx="265" cy="118" r="3.5" fill="#ef4444" style="fill:rgb(239, 68, 68);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.780397;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="265" cy="118" r="0" style="fill:none;stroke:rgb(239, 68, 68);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.12197;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- France target -->
+<circle cx="378" cy="96" r="2.5" fill="#f97316" style="fill:rgb(249, 115, 22);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.626179;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Australia target -->
+<circle cx="608" cy="222" r="3" fill="#ef4444" style="fill:rgb(239, 68, 68);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.304515;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- India target -->
+<circle cx="510" cy="150" r="2.5" fill="#f97316" style="fill:rgb(249, 115, 22);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.894521;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- China origin pulse -->
+<circle cx="568" cy="108" r="4" fill="#ef4444" opacity="0.9" style="fill:rgb(239, 68, 68);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.780397;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Russia origin pulse -->
+<circle cx="510" cy="68" r="3.5" fill="#ef4444" opacity="0.8" style="fill:rgb(239, 68, 68);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.626179;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- ── LEFT PANEL (text + badges) ── -->
+<!-- White card behind text for legibility -->
+<rect x="24" y="48" width="202" height="248" rx="12" fill="white" opacity="0.88" stroke="#dde9f7" stroke-width="0.8" style="fill:rgb(255, 255, 255);stroke:rgb(221, 233, 247);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.88;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Shield icon -->
+<g transform="translate(44, 68)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+  <path d="M18 2L4 8V16C4 23.2 10.4 29.6 18 31.4C25.6 29.6 32 23.2 32 16V8L18 2Z" style="fill:rgba(59, 130, 246, 0.1);stroke:rgb(37, 99, 235);color:rgb(255, 255, 255);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <path d="M12 17L16 21L24 13" style="fill:none;stroke:rgb(37, 99, 235);color:rgb(255, 255, 255);stroke-width:2.5px;stroke-linecap:round;stroke-linejoin:round;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</g>
+
+<!-- Brand name -->
+<text x="86" y="82" font-family="'Syne', sans-serif" font-weight="800" font-size="18" fill="#0a0f1e" letter-spacing="-0.4" style="fill:rgb(10, 15, 30);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Syne, sans-serif;font-size:18px;font-weight:800;text-anchor:start;dominant-baseline:auto">CyberSec</text>
+<text x="86" y="100" font-family="'Syne', sans-serif" font-weight="800" font-size="18" fill="#2563eb" letter-spacing="-0.4" style="fill:rgb(37, 99, 235);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Syne, sans-serif;font-size:18px;font-weight:800;text-anchor:start;dominant-baseline:auto">Watch</text>
+
+<!-- Separator -->
+<line x1="44" y1="114" x2="214" y2="114" stroke="#dde9f7" stroke-width="0.8" style="fill:rgb(0, 0, 0);stroke:rgb(221, 233, 247);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Tagline -->
+<text x="44" y="132" font-family="sans-serif" font-size="11" fill="#4a5c7a" font-weight="500" style="fill:rgb(74, 92, 122);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:11px;font-weight:500;text-anchor:start;dominant-baseline:auto">Threat Intelligence Platform</text>
+<text x="44" y="148" font-family="sans-serif" font-size="10" fill="#8899bb" style="fill:rgb(136, 153, 187);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:10px;font-weight:400;text-anchor:start;dominant-baseline:auto">Veille mondiale · Temps réel</text>
+
+<!-- Sources pills -->
+<rect x="44" y="160" width="44" height="18" rx="9" style="fill:rgb(239, 246, 255);stroke:rgb(191, 219, 254);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="66" y="173" font-family="'JetBrains Mono', monospace" font-size="9" fill="#1d4ed8" text-anchor="middle" font-weight="500" style="fill:rgb(29, 78, 216);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;JetBrains Mono&quot;, monospace;font-size:9px;font-weight:500;text-anchor:middle;dominant-baseline:auto">NVD</text>
+
+<rect x="94" y="160" width="48" height="18" rx="9" style="fill:rgb(239, 246, 255);stroke:rgb(191, 219, 254);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="118" y="173" font-family="'JetBrains Mono', monospace" font-size="9" fill="#1d4ed8" text-anchor="middle" font-weight="500" style="fill:rgb(29, 78, 216);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;JetBrains Mono&quot;, monospace;font-size:9px;font-weight:500;text-anchor:middle;dominant-baseline:auto">CISA</text>
+
+<rect x="148" y="160" width="60" height="18" rx="9" style="fill:rgb(255, 247, 237);stroke:rgb(254, 215, 170);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="178" y="173" font-family="'JetBrains Mono', monospace" font-size="9" fill="#9a3412" text-anchor="middle" font-weight="500" style="fill:rgb(154, 52, 18);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;JetBrains Mono&quot;, monospace;font-size:9px;font-weight:500;text-anchor:middle;dominant-baseline:auto">RansomW.</text>
+
+<!-- Stats row -->
+<rect x="44" y="188" width="80" height="46" rx="8" fill="#fef2f2" stroke="#fecaca" stroke-width="0.8" style="fill:rgb(254, 242, 242);stroke:rgb(254, 202, 202);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="84" y="207" font-family="'JetBrains Mono', monospace" font-size="16" fill="#dc2626" text-anchor="middle" font-weight="700" style="fill:rgb(220, 38, 38);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;JetBrains Mono&quot;, monospace;font-size:16px;font-weight:700;text-anchor:middle;dominant-baseline:auto">5</text>
+<text x="84" y="224" font-family="sans-serif" font-size="9" fill="#9a3412" text-anchor="middle" style="fill:rgb(154, 52, 18);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:9px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Sources réelles</text>
+
+<rect x="132" y="188" width="80" height="46" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.8" style="fill:rgb(239, 246, 255);stroke:rgb(191, 219, 254);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="172" y="207" font-family="'JetBrains Mono', monospace" font-size="16" fill="#1d4ed8" text-anchor="middle" font-weight="700" style="fill:rgb(29, 78, 216);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;JetBrains Mono&quot;, monospace;font-size:16px;font-weight:700;text-anchor:middle;dominant-baseline:auto">SSE</text>
+<text x="172" y="224" font-family="sans-serif" font-size="9" fill="#1e40af" text-anchor="middle" style="fill:rgb(30, 64, 175);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:9px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Flux temps réel</text>
+
+<!-- Feature list -->
+<text x="52" y="254" font-family="sans-serif" font-size="10" fill="#4a5c7a" style="fill:rgb(74, 92, 122);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:10px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+  <tspan x="44" dy="0" style="fill:rgb(74, 92, 122);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:10px;font-weight:400;text-anchor:start;dominant-baseline:auto">✓</tspan>
+  <tspan dx="4" fill="#1e2d4a" style="fill:rgb(30, 45, 74);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:10px;font-weight:400;text-anchor:start;dominant-baseline:auto">Carte mondiale Canvas</tspan>
+</text>
+<text x="44" y="270" font-family="sans-serif" font-size="10" fill="#4a5c7a" style="fill:rgb(74, 92, 122);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:10px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+  <tspan x="44" style="fill:rgb(74, 92, 122);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:10px;font-weight:400;text-anchor:start;dominant-baseline:auto">✓</tspan>
+  <tspan dx="4" fill="#1e2d4a" style="fill:rgb(30, 45, 74);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:10px;font-weight:400;text-anchor:start;dominant-baseline:auto">CVE Database NVD/NIST</tspan>
+</text>
+<text x="44" y="285" font-family="sans-serif" font-size="10" fill="#4a5c7a" style="fill:rgb(74, 92, 122);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:10px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+  <tspan x="44" style="fill:rgb(74, 92, 122);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:10px;font-weight:400;text-anchor:start;dominant-baseline:auto">✓</tspan>
+  <tspan dx="4" fill="#1e2d4a" style="fill:rgb(30, 45, 74);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:10px;font-weight:400;text-anchor:start;dominant-baseline:auto">CISA KEV · Ransomware</tspan>
+</text>
+
+<!-- ── LIVE INDICATOR (top-right of map) ── -->
+<rect x="582" y="48" width="76" height="22" rx="11" fill="#fef2f2" stroke="#fecaca" stroke-width="0.8" style="fill:rgb(254, 242, 242);stroke:rgb(254, 202, 202);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="598" cy="59" r="4" fill="#ef4444" style="fill:rgb(239, 68, 68);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.362252;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="607" y="63" font-family="'JetBrains Mono', monospace" font-size="10" fill="#dc2626" font-weight="700" style="fill:rgb(220, 38, 38);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;JetBrains Mono&quot;, monospace;font-size:10px;font-weight:700;text-anchor:start;dominant-baseline:auto">LIVE</text>
+
+<!-- ── BOTTOM STAT PILLS ── -->
+<rect x="230" y="284" width="110" height="24" rx="12" fill="white" stroke="#dde9f7" stroke-width="0.8" opacity="0.9" style="fill:rgb(255, 255, 255);stroke:rgb(221, 233, 247);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.9;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="285" y="300" font-family="'JetBrains Mono', monospace" font-size="10" fill="#1d4ed8" text-anchor="middle" font-weight="500" style="fill:rgb(29, 78, 216);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;JetBrains Mono&quot;, monospace;font-size:10px;font-weight:500;text-anchor:middle;dominant-baseline:auto">Node.js + Express</text>
+
+<rect x="352" y="284" width="86" height="24" rx="12" fill="white" stroke="#dde9f7" stroke-width="0.8" opacity="0.9" style="fill:rgb(255, 255, 255);stroke:rgb(221, 233, 247);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.9;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="395" y="300" font-family="'JetBrains Mono', monospace" font-size="10" fill="#1d4ed8" text-anchor="middle" font-weight="500" style="fill:rgb(29, 78, 216);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;JetBrains Mono&quot;, monospace;font-size:10px;font-weight:500;text-anchor:middle;dominant-baseline:auto">Canvas API</text>
+
+<rect x="450" y="284" width="80" height="24" rx="12" fill="white" stroke="#dde9f7" stroke-width="0.8" opacity="0.9" style="fill:rgb(255, 255, 255);stroke:rgb(221, 233, 247);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.9;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="490" y="300" font-family="'JetBrains Mono', monospace" font-size="10" fill="#1d4ed8" text-anchor="middle" font-weight="500" style="fill:rgb(29, 78, 216);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;JetBrains Mono&quot;, monospace;font-size:10px;font-weight:500;text-anchor:middle;dominant-baseline:auto">REST + SSE</text>
+
+<rect x="542" y="284" width="96" height="24" rx="12" fill="white" stroke="#dde9f7" stroke-width="0.8" opacity="0.9" style="fill:rgb(255, 255, 255);stroke:rgb(221, 233, 247);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.9;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="590" y="300" font-family="'JetBrains Mono', monospace" font-size="10" fill="#1d4ed8" text-anchor="middle" font-weight="500" style="fill:rgb(29, 78, 216);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;JetBrains Mono&quot;, monospace;font-size:10px;font-weight:500;text-anchor:middle;dominant-baseline:auto">Vanilla JS ES6</text>
+
+<!-- Bottom accent line -->
+<rect x="0" y="326" width="680" height="2" fill="#2563eb" opacity="0.3" style="fill:rgb(37, 99, 235);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.3;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<rect x="0" y="338" width="680" height="2" fill="#2563eb" opacity="0.08" style="fill:rgb(37, 99, 235);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.08;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- ── MADE WITH LABEL ── -->
+<text x="340" y="320" font-family="sans-serif" font-size="9" fill="#8899bb" text-anchor="middle" letter-spacing="1" style="fill:rgb(136, 153, 187);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:sans-serif;font-size:9px;font-weight:400;text-anchor:middle;dominant-baseline:auto">THREAT INTELLIGENCE · REAL-TIME · OPEN SOURCE</text>
+
+</svg>
