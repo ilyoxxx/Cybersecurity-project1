@@ -1,3 +1,6 @@
+./cybersec_watch_banner.svg
+
+
 # 🛡️ CyberSec Watch v2
 
 **Plateforme de veille mondiale en cybersécurité** — Dashboard temps réel sans authentification, connecté aux vraies APIs publiques mondiales.
