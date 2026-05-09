@@ -1,5 +1,5 @@
-[./cybersec_watch_banner.svg
-](https://raw.githubusercontent.com/ilyoxxx/VEILLE-DE-cybers-curit-/4a3d620f89668fd3825f615d115646cbb48b1ae4/cybersec_watch_banner.svg)
+
+https://raw.githubusercontent.com/ilyoxxx/VEILLE-DE-cybers-curit-/4a3d620f89668fd3825f615d115646cbb48b1ae4/cybersec_watch_banner.svg
 
 # 🛡️ CyberSec Watch v2
 
