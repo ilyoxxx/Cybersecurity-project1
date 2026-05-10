@@ -149,164 +149,199 @@ function buildTicker(stats) {
   `).join('');
 }
 
-// ── CANVAS MAP ─────────────────────────────────────────────
-const MAP_W = 1000, MAP_H = 400;
+// ── REAL WORLD MAP (D3 + TopoJSON) ────────────────────────
+const THREAT_COUNTRIES = {
+  156: 'CRITICAL', // Chine
+  643: 'CRITICAL', // Russie
+  408: 'CRITICAL', // Corée du Nord
+  364: 'HIGH',     // Iran
+  368: 'HIGH',     // Irak
+  760: 'HIGH',     // Syrie
+  566: 'HIGH',     // Nigeria
+  76:  'HIGH',     // Brésil
+  792: 'MEDIUM',   // Turquie
+  288: 'MEDIUM',   // Ghana
+  356: 'MEDIUM',   // Inde
+  702: 'MEDIUM',   // Singapour
+};
 
-function latLng(lat, lng) {
-  // Simple equirectangular projection to match SVG-like coords
-  const x = ((lng + 180) / 360) * MAP_W;
-  const y = ((90 - lat) / 180) * MAP_H;
-  return { x, y };
+// D3 projection (set once world loads)
+let d3proj = null;
+
+function projectLL(lng, lat) {
+  if (!d3proj) return null;
+  return d3proj([lng, lat]);
 }
 
 function initCanvas(countries) {
-  const canvas = document.getElementById('mapCanvas');
-  if (!canvas) return;
-  canvas.width  = MAP_W;
-  canvas.height = MAP_H;
+  const mapWrap = document.querySelector('.map-wrap');
+  const canvas  = document.getElementById('mapCanvas');
+  if (!mapWrap || !canvas) return;
 
-  // Draw initial state with base map, then animate
-  drawMapFrame(canvas, countries);
-  setInterval(() => drawMapFrame(canvas, countries), 50);
+  const W = mapWrap.offsetWidth  || 900;
+  const H = mapWrap.offsetHeight || 340;
+
+  // SVG overlay for D3 countries (sits behind canvas)
+  const svgEl = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svgEl.setAttribute('width',  '100%');
+  svgEl.setAttribute('height', H);
+  svgEl.style.cssText = 'position:absolute;top:0;left:0;pointer-events:none;';
+  svgEl.id = 'mapSvgD3';
+
+  // Background ocean
+  const ocean = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+  ocean.setAttribute('width', W);
+  ocean.setAttribute('height', H);
+  ocean.setAttribute('fill', '#e8f2ff');
+  svgEl.appendChild(ocean);
+
+  mapWrap.style.position = 'relative';
+  mapWrap.insertBefore(svgEl, canvas);
+
+  canvas.width  = W;
+  canvas.height = H;
+  canvas.style.cssText = 'position:absolute;top:0;left:0;pointer-events:none;';
+
+  // D3 projection — Natural Earth (même que la vraie bannière)
+  d3proj = window.d3.geoNaturalEarth1()
+    .scale(W / 6.2)
+    .translate([W / 2, H / 2 + H * 0.04]);
+
+  const path = window.d3.geoPath(d3proj);
+
+  // Graticule
+  const grat = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  grat.setAttribute('d', path(window.d3.geoGraticule()()));
+  grat.setAttribute('fill', 'none');
+  grat.setAttribute('stroke', '#c5ddf7');
+  grat.setAttribute('stroke-width', '0.3');
+  svgEl.appendChild(grat);
+
+  // Load real world topology
+  window.d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(world => {
+    const features = window.topojson.feature(world, world.objects.countries).features;
+
+    features.forEach(f => {
+      const threat = THREAT_COUNTRIES[+f.id];
+      const fill   = threat === 'CRITICAL' ? '#fecaca'
+                   : threat === 'HIGH'     ? '#fed7aa'
+                   : threat === 'MEDIUM'   ? '#fde68a'
+                   : '#dce8ff';
+
+      const p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      p.setAttribute('d', path(f));
+      p.setAttribute('fill', fill);
+      p.setAttribute('stroke', '#b8d0f5');
+      p.setAttribute('stroke-width', '0.4');
+      svgEl.appendChild(p);
+    });
+
+    // Country borders mesh
+    const mesh = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    mesh.setAttribute('d', path(window.topojson.mesh(world, world.objects.countries, (a,b) => a !== b)));
+    mesh.setAttribute('fill', 'none');
+    mesh.setAttribute('stroke', '#b8d0f5');
+    mesh.setAttribute('stroke-width', '0.4');
+    svgEl.appendChild(mesh);
+
+    // Heatmap pulses on threat countries
+    if (countries) {
+      countries.forEach(c => {
+        const pt = projectLL(c.lng, c.lat);
+        if (!pt) return;
+        const r     = 4 + (c.attacks / 2000) * 14;
+        const alpha = (0.1 + (c.attacks / 6000) * 0.2).toFixed(2);
+        const col   = c.threat === 'CRITICAL' ? `rgba(239,68,68,${alpha})`
+                    : c.threat === 'HIGH'     ? `rgba(249,115,22,${alpha})`
+                    : `rgba(59,130,246,${alpha})`;
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('cx', pt[0]);
+        circle.setAttribute('cy', pt[1]);
+        circle.setAttribute('r', r * 2.5);
+        circle.setAttribute('fill', col);
+        svgEl.appendChild(circle);
+      });
+    }
+
+    // Start animation loop once map is ready
+    startMapAnimation(canvas, W, H);
+  }).catch(() => {
+    // Fallback si CDN bloqué
+    startMapAnimation(canvas, W, H);
+  });
 }
 
-// Pre-computed continent polygons for the canvas
-const CONTINENTS = [
-  // North America
-  [[70,70],[110,60],[160,55],[200,65],[230,80],[250,105],[260,140],[250,175],[235,210],[220,240],[195,265],[170,275],[145,270],[120,255],[100,235],[82,210],[68,180],[60,150],[62,115]],
-  // South America
-  [[175,280],[215,275],[250,285],[270,310],[280,345],[278,385],[268,420],[250,455],[225,470],[200,468],[178,450],[162,420],[155,385],[158,345],[165,315]],
-  // Europe
-  [[420,55],[480,50],[520,58],[545,75],[548,100],[535,118],[510,130],[480,132],[455,125],[435,108],[422,88]],
-  // Scandinavia
-  [[455,25],[480,22],[495,35],[490,52],[475,55],[460,50],[450,38]],
-  // Africa
-  [[422,140],[510,135],[548,155],[560,190],[558,240],[548,290],[540,340],[522,385],[498,412],[468,425],[438,420],[412,400],[395,365],[385,320],[388,270],[395,225],[400,185]],
-  // Asia
-  [[548,40],[640,35],[710,38],[775,42],[830,55],[855,80],[865,115],[858,155],[840,190],[808,215],[770,228],[725,235],[680,232],[640,222],[600,205],[568,185],[548,160],[540,128],[542,90]],
-  // India
-  [[640,185],[685,178],[710,195],[720,225],[715,260],[700,290],[680,308],[660,305],[642,285],[635,255],[630,220]],
-  // SE Asia  
-  [[720,215],[765,210],[790,225],[800,250],[785,268],[760,265],[738,248]],
-  // Australia
-  [[740,310],[820,300],[868,318],[880,355],[875,400],[855,430],[822,445],[785,448],[750,435],[726,410],[715,375],[718,340]],
-  // Russia North
-  [[548,25],[720,18],[820,20],[855,42],[855,80],[775,42],[640,35],[548,40]],
-  // Japan
-  [[832,115],[850,108],[862,128],[855,145],[838,142]],
-  // UK
-  [[407,57],[425,54],[427,74],[417,79],[405,71]],
-  // Greenland
-  [[280,20],[340,18],[360,35],[355,60],[335,70],[310,68],[288,50]],
-];
-
-function drawMapFrame(canvas, countries) {
+function startMapAnimation(canvas, W, H) {
   const ctx = canvas.getContext('2d');
-  ctx.clearRect(0, 0, MAP_W, MAP_H);
 
-  // Background gradient
-  const bg = ctx.createLinearGradient(0, 0, 0, MAP_H);
-  bg.addColorStop(0, '#eef4ff');
-  bg.addColorStop(1, '#f4f8ff');
-  ctx.fillStyle = bg;
-  ctx.fillRect(0, 0, MAP_W, MAP_H);
+  function frame() {
+    ctx.clearRect(0, 0, W, H);
 
-  // Lat/lng grid lines
-  ctx.strokeStyle = 'rgba(37,99,235,0.06)';
-  ctx.lineWidth = 0.6;
-  for (let lat = -90; lat <= 90; lat += 30) {
-    const y = ((90 - lat) / 180) * MAP_H;
-    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(MAP_W, y); ctx.stroke();
-  }
-  for (let lng = -180; lng <= 180; lng += 30) {
-    const x = ((lng + 180) / 360) * MAP_W;
-    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, MAP_H); ctx.stroke();
-  }
+    // Draw arcs
+    S.mapLines = S.mapLines.filter(l => l.age < l.maxAge);
+    S.mapLines.forEach(l => {
+      l.age++;
+      const prog  = l.age / l.maxAge;
+      const alpha = prog < 0.2 ? prog / 0.2 : prog > 0.75 ? 1 - (prog - 0.75) / 0.25 : 1;
+      const t     = Math.min(prog * 1.4, 1);
+      const cpX   = (l.x1 + l.x2) / 2;
+      const cpY   = Math.min(l.y1, l.y2) - Math.abs(l.x2 - l.x1) * 0.3;
+      const ex    = (1-t)*(1-t)*l.x1 + 2*(1-t)*t*cpX + t*t*l.x2;
+      const ey    = (1-t)*(1-t)*l.y1 + 2*(1-t)*t*cpY + t*t*l.y2;
 
-  // Draw continents
-  ctx.fillStyle   = '#dce8ff';
-  ctx.strokeStyle = '#b8d0f5';
-  ctx.lineWidth   = 0.8;
-  CONTINENTS.forEach(pts => {
-    ctx.beginPath();
-    ctx.moveTo(pts[0][0], pts[0][1]);
-    pts.slice(1).forEach(p => ctx.lineTo(p[0], p[1]));
-    ctx.closePath();
-    ctx.fill();
-    ctx.stroke();
-  });
-
-  // Country heatmap dots
-  if (countries) {
-    countries.forEach(c => {
-      const pos = latLng(c.lat, c.lng);
-      const radius = 4 + (c.attacks / 2000) * 16;
-      const alpha  = 0.08 + (c.attacks / 6000) * 0.18;
-      const color  = c.threat === 'CRITICAL' ? `rgba(239,68,68,${alpha})` :
-                     c.threat === 'HIGH'     ? `rgba(249,115,22,${alpha})` :
-                                               `rgba(59,130,246,${alpha})`;
-      const grad = ctx.createRadialGradient(pos.x, pos.y, 0, pos.x, pos.y, radius * 2.5);
-      grad.addColorStop(0, color);
-      grad.addColorStop(1, 'rgba(0,0,0,0)');
       ctx.beginPath();
-      ctx.arc(pos.x, pos.y, radius * 2.5, 0, Math.PI * 2);
-      ctx.fillStyle = grad;
+      ctx.moveTo(l.x1, l.y1);
+      ctx.quadraticCurveTo(cpX, cpY, ex, ey);
+      ctx.strokeStyle = l.color + Math.floor(alpha * 200).toString(16).padStart(2,'0');
+      ctx.lineWidth   = 1.4;
+      ctx.setLineDash([5, 3]);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Moving dot on arc
+      ctx.beginPath();
+      ctx.arc(ex, ey, 3, 0, Math.PI * 2);
+      ctx.fillStyle = l.color;
       ctx.fill();
     });
+
+    // Draw pulse dots at destinations
+    S.mapDots = S.mapDots.filter(d => d.age < d.maxAge);
+    S.mapDots.forEach(d => {
+      d.age++;
+      const prog  = d.age / d.maxAge;
+      const alpha = prog < 0.1 ? prog / 0.1 : 1 - prog;
+
+      // Core dot
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, 3.5, 0, Math.PI * 2);
+      ctx.fillStyle = d.color + 'ee';
+      ctx.fill();
+
+      // Expanding ring
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, 3.5 + prog * 14, 0, Math.PI * 2);
+      ctx.strokeStyle = d.color + Math.floor(alpha * 160).toString(16).padStart(2,'0');
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    });
+
+    setText('mapEvtCount', `${fmt(S.mapEvents)} événements`);
+    requestAnimationFrame(frame);
   }
-
-  // Advance & draw lines
-  S.mapLines = S.mapLines.filter(l => l.age < l.maxAge);
-  S.mapLines.forEach(l => {
-    l.age++;
-    const prog = l.age / l.maxAge;
-    const alpha = prog < 0.2 ? prog / 0.2 : prog > 0.7 ? 1 - (prog - 0.7) / 0.3 : 1;
-    // Draw progress of line
-    const endX = l.x1 + (l.x2 - l.x1) * Math.min(prog * 2, 1);
-    const endY = l.y1 + (l.y2 - l.y1) * Math.min(prog * 2, 1);
-    const cpX  = (l.x1 + l.x2) / 2;
-    const cpY  = Math.min(l.y1, l.y2) - 35;
-    ctx.beginPath();
-    ctx.moveTo(l.x1, l.y1);
-    ctx.quadraticCurveTo(cpX, cpY, endX, endY);
-    ctx.strokeStyle = l.color + Math.floor(alpha * 180).toString(16).padStart(2,'0');
-    ctx.lineWidth   = 1.2;
-    ctx.setLineDash([4, 2]);
-    ctx.stroke();
-    ctx.setLineDash([]);
-  });
-
-  // Advance & draw dots
-  S.mapDots = S.mapDots.filter(d => d.age < d.maxAge);
-  S.mapDots.forEach(d => {
-    d.age++;
-    const prog  = d.age / d.maxAge;
-    const alpha = prog < 0.15 ? prog / 0.15 : 1 - prog;
-    const r     = d.r + prog * 6;
-    ctx.beginPath();
-    ctx.arc(d.x, d.y, r, 0, Math.PI * 2);
-    ctx.fillStyle = d.color + Math.floor(alpha * 220).toString(16).padStart(2,'0');
-    ctx.fill();
-    // Pulse ring
-    ctx.beginPath();
-    ctx.arc(d.x, d.y, r + 4 + prog * 8, 0, Math.PI * 2);
-    ctx.strokeStyle = d.color + Math.floor(alpha * 80).toString(16).padStart(2,'0');
-    ctx.lineWidth = 1;
-    ctx.stroke();
-  });
-
-  // Counter
-  setText('mapEvtCount', `${fmt(S.mapEvents)} événements`);
+  frame();
 }
 
 function addMapEvent(threat) {
-  const src = latLng(threat.src.lat, threat.src.lng);
-  const dst = latLng(threat.dst.lat, threat.dst.lng);
+  const src = projectLL(threat.src.lng, threat.src.lat);
+  const dst = projectLL(threat.dst.lng, threat.dst.lat);
+  if (!src || !dst) return;
   const col = threat.attack.color;
-  S.mapLines.push({ x1: src.x, y1: src.y, x2: dst.x, y2: dst.y, color: col, age: 0, maxAge: 60 });
-  S.mapDots.push({ x: dst.x, y: dst.y, color: col, r: 3, age: 0, maxAge: 50 });
-  if (S.mapLines.length > 60) S.mapLines.shift();
-  if (S.mapDots.length > 60)  S.mapDots.shift();
+
+  S.mapLines.push({ x1: src[0], y1: src[1], x2: dst[0], y2: dst[1], color: col, age: 0, maxAge: 70 });
+  S.mapDots.push({ x: dst[0], y: dst[1], color: col, age: 0, maxAge: 55 });
+  if (S.mapLines.length > 80) S.mapLines.shift();
+  if (S.mapDots.length > 80)  S.mapDots.shift();
   S.mapEvents++;
 }
 
