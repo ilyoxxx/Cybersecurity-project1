@@ -80,4 +80,4 @@ cybersec-watch/
 
 ---
 
-> ⭐ Fait pour les CVs. Montre des vraies compétences : API REST, SSE, Canvas, design système, intégration données publiques.
+> Ce projet à été fait à but éducatif & d'analyse.
